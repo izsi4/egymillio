@@ -1,0 +1,36 @@
+def calculator():
+    print("Egyszerű kalkulátor")
+    print("Választható műveletek:")
+    print("1. Összeadás")
+    print("2. Kivonás")
+    print("3. Szorzás")
+    print("4. Osztás")
+
+    # Kérjük be a műveletet
+    try:
+        choice = int(input("Válassz egy műveletet (1/2/3/4): "))
+
+        if choice in [1, 2, 3, 4]:
+            num1 = float(input("Add meg az első számot: "))
+            num2 = float(input("Add meg a második számot: "))
+
+            if choice == 1:
+                print(f"Eredmény: {num1} + {num2} = {num1 + num2}")
+            elif choice == 2:
+                print(f"Eredmény: {num1} - {num2} = {num1 - num2}")
+            elif choice == 3:
+                print(f"Eredmény: {num1} * {num2} = {num1 * num2}")
+            elif choice == 4:
+                if num2 != 0:
+                    print(f"Eredmény: {num1} / {num2} = {num1 / num2}")
+                else:
+                    print("Hiba: Nullával nem lehet osztani!")
+        else:
+            print("Érvénytelen választás. Kérlek, próbáld újra.")
+
+    except ValueError:
+        print("Hiba: Érvénytelen bevitel. Kérlek, számokat adj meg!")
+
+# Kalkulátor futtatása
+if __name__ == "__main__":
+    calculator()
